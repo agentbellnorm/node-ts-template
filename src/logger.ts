@@ -178,6 +178,7 @@ export class WinstonLogger {
 const redacter = WinstonLogger.redacter();
 
 export function createRootLogger(
+  name = 'backend',
   options: winston.LoggerOptions = {},
   env = process.env
 ): winston.Logger {
@@ -201,7 +202,7 @@ export function createRootLogger(
         options
       )
     )
-    .child({ service: "grocery-backend" });
+    .child({ service: name });
 
   return logger;
 }

@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 const port = 3000;
 
-const logger = createRootLogger();
+const logger = createRootLogger('template-backend');
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
